@@ -10,4 +10,18 @@ The [AntiSmash](https://antismash.secondarymetabolites.org/#!/start) webserver i
         e.g. 
         NC_089403.1 RefSeq           	CDS  	3866126            3866500        	.          	-          	0
 
-This script creates a deduped GFF3 annotation file from the original GFF3 files where genes may be duplicated.
+The Perl script gff_dedup.pl  creates a deduped GFF3 annotation file from the original GFF3 files where genes may be duplicated.
+
+**General Usage**
+
+The Perl script gff_dedup.pl can be called by specifying the path of the original GFF3 file as input, and the dedupped GFF3 file as output.
+
+        perl /Volumes/scratch/brownlab/gff_dedup.pl -gff <original_GFF> -out <dedupped_gff>
+
+Alternatively, you can specify only the path of the original GFF3 file, and the output dedupped GFF path will be the same as the input GFF path, with ".dedup.gff3" appended.
+
+        perl /Volumes/scratch/brownlab/gff_dedup.pl -gff <input_GFF>
+
+**Dependency**
+
+The only dependency is Bedtools, which is available [here](https://bedtools.readthedocs.io/en/latest/).
